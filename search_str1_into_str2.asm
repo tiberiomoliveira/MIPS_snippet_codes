@@ -21,7 +21,7 @@ main:
 Loop:
     add     $t2, $t0, $a0             # point to the real item address of the string 1
     lbu     $t4, 0($t2)               # load a character of the string 1
-    beq     $t4, $zero, End           # $t4 == 0 means it is the and of the string 1
+    beq     $t4, $zero, End           # $t4 == 0 means it is the end of the string 1
     beq     $t4, $t5, Found           # jump to found if $t4 == $t5
     add     $t1, $zero, $zero         # reinitialize the index for string 2
     addi    $t6, $zero, -1            # reinitialize the found index
