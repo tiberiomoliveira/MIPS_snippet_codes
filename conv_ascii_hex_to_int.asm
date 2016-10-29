@@ -16,7 +16,7 @@ Loop:
     add     $t4, $t3, $a0             # point to the real item address
     lbu     $t4, 0($t4)               # load an item of the array
     beq     $t4, $zero, End           # $t4 == 0 means it is the end of the string
-    blt     $t4, 48, Error            # $t4 < '0'(value 48 in ascii) so it is not a hexadecimal
+    blt     $t4, 48, Error            # $t4 < '0' (value 48 in ascii) so it is not a hexadecimal
     bgt     $t4, 70, Error            # $t4 > 'F' (value 70 in ascii) so it is not a hexadecimal
     ble     $t4, 57, Decimal          # $t4 < '9' (value 57 in ascii) so it is a decimal number
     ble     $t4, 65, Hexadecimal      # $t4 > 'A' (value 65 in ascii) so ti is a hexadecimal number
